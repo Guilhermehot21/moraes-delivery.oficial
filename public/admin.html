@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Moraes Delivery — Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/admin.css">
+</head>
+<body>
+<div id="loginView" class="login-wrap">
+  <div class="login-card"><div class="brand"><span class="brand-mark">M</span><span><b>MORAES</b><small>DELIVERY ADMIN</small></span></div>
+  <h1>Painel administrativo</h1><p>Gerencie produtos, pedidos, preços, disponibilidade e faturamento.</p>
+  <form id="loginForm"><div class="field"><label>Senha do administrador</label><input id="adminPassword" type="password" required></div><button class="btn primary wide">Entrar</button><div id="loginError" class="error"></div></form></div>
+</div>
+<div id="appView" class="admin-app hidden">
+  <aside class="sidebar"><div class="brand"><span class="brand-mark">M</span><span><b>MORAES</b><small>DELIVERY</small></span></div>
+    <button class="side-link active" data-page="dashboard">📊 Dashboard</button>
+    <button class="side-link" data-page="orders">🧾 Pedidos</button>
+    <button class="side-link" data-page="products">🛍️ Produtos</button>
+    <button class="side-link" data-page="categories">🗂️ Categorias</button>
+    <button class="side-link" data-page="extras">🍓 Adicionais</button>
+    <button class="side-link" data-page="delivery">🏍️ Entrega</button>
+    <button class="side-link" data-page="settings">⚙️ Configurações</button>
+    <a class="side-link" href="/" target="_blank">↗ Ver loja</a>
+    <button id="logout" class="side-link logout">Sair</button>
+  </aside>
+  <main class="admin-main">
+    <header class="admin-head"><div><span class="eyebrow">MORAES DELIVERY</span><h1 id="pageTitle">Dashboard</h1></div><div id="refreshText" class="muted"></div></header>
+    <section id="dashboardPage" class="page"></section>
+    <section id="ordersPage" class="page hidden"></section>
+    <section id="productsPage" class="page hidden"></section>
+    <section id="categoriesPage" class="page hidden"></section>
+    <section id="extrasPage" class="page hidden"></section>
+    <section id="deliveryPage" class="page hidden"></section>
+    <section id="settingsPage" class="page hidden"></section>
+  </main>
+</div>
+<div id="adminModal" class="modal hidden"><div class="modal-backdrop" data-close-admin></div><div class="modal-box" id="adminModalContent"></div></div>
+<script src="/admin.js"></script>
+</body>
+</html>

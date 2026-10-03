@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#6d28d9">
+  <meta name="description" content="Moraes Delivery — açaí, bebidas, cervejas, copão, bomboniere e salgados.">
+  <title>Moraes Delivery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#">
+    <span class="brand-mark">M</span>
+    <span><b>MORAES</b><small>DELIVERY</small></span>
+  </a>
+  <nav id="desktopNav" class="desktop-nav"></nav>
+  <button id="openCart" class="cart-btn" aria-label="Abrir carrinho">
+    🛒 <span id="cartCount">0</span>
+  </button>
+</header>
+
+<div id="storeStatus" class="store-status loading"><span class="status-dot"></span><strong>Verificando funcionamento da loja...</strong><span id="storeStatusMeta"></span></div>
+<section class="hero">
+  <div class="hero-copy">
+    <span class="eyebrow">PEDIU • CHEGOU</span>
+    <h1>Moraes <span>Delivery</span></h1>
+    <p>Açaí, bebidas, cervejas, copão, bomboniere e salgados para pedir de forma rápida e prática.</p>
+    <div class="hero-actions">
+      <a href="#cardapio" class="btn primary">Ver cardápio</a>
+      <button class="btn ghost" id="openOrders">Meus pedidos</button>
+    </div>
+  </div>
+  <div class="hero-card">
+    <img src="/images/acai-reference.png" alt="Açaí Moraes Delivery">
+    <div><strong>Seu pedido do seu jeito.</strong><span>Escolha, monte e finalize.</span></div>
+  </div>
+</section>
+
+<main id="cardapio" class="container">
+  <div class="section-heading">
+    <div><span class="eyebrow">CARDÁPIO</span><h2>Escolha uma categoria</h2></div>
+    <button id="clearSearch" class="link-btn">Limpar busca</button>
+  </div>
+  <div class="toolbar">
+    <div id="categories" class="categories"></div>
+    <label class="search"><span>⌕</span><input id="search" placeholder="Buscar produto..."></label>
+  </div>
+  <div id="categoryBanner" class="category-banner"></div>
+  <section id="products" class="product-grid"></section>
+  <div id="emptyProducts" class="empty hidden">Nenhum produto encontrado.</div>
+</main>
+
+<section class="delivery-strip">
+  <div><span class="eyebrow">RECEBA COMO PREFERIR</span><h2>Delivery ou retirada no local.</h2><p>As taxas aparecem automaticamente antes de finalizar.</p></div>
+  <div class="delivery-pills"><span id="minOrderInfo">💰 Pedido mínimo: R$ 0,00</span><span id="deliveryTimeInfo">⏱️ Tempo estimado: --</span><span>🏪 Retirada no local</span></div>
+</section>
+
+<footer>
+  <div><strong>MORAES DELIVERY</strong><p>Seu pedido, do seu jeito.</p></div>
+  <a href="/admin">Área administrativa</a>
+</footer>
+
+<div id="modal" class="modal hidden" aria-hidden="true">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-box" id="modalContent"></div>
+</div>
+
+<aside id="cartDrawer" class="drawer">
+  <div class="drawer-head"><div><span class="eyebrow">SEU PEDIDO</span><h2>Carrinho</h2></div><button class="icon-btn" id="closeCart">×</button></div>
+  <div id="cartItems" class="cart-items"></div>
+  <div class="cart-foot">
+    <div class="totals"><span>Subtotal</span><strong id="cartSubtotal">R$ 0,00</strong></div>
+    <button class="btn primary wide" id="checkoutBtn">Continuar para entrega</button>
+  </div>
+</aside>
+<div id="drawerBackdrop" class="drawer-backdrop"></div>
+
+<script src="/app.js"></script>
+</body>
+</html>
